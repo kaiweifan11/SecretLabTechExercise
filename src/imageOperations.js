@@ -60,3 +60,4 @@ function changeImageNumber(){
     $("#imageNumber").text("Image " + (currentSelectedImage+1));
     $("#imageBreadcrumb").text((currentSelectedImage+1) + ' of ' + allImages.length );
 }
+

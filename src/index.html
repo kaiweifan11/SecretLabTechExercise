@@ -21,7 +21,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="imageOperations.js"></script>
     <script src="htmlCanvas.js"></script>
-
+    <script src="annotations.js"></script>
+    <script src="draggable.js"></script>
     
   </head>
   <body>
@@ -29,19 +30,26 @@
     <div id="'root" class="root">
         <div class="flex-container">
             <div class="flex-items">
-                <div class="canvas">
+                <div class="canvas" id="canvas">
                     <!--<img class="image" src="test.jpg" />-->
-                    <canvas id="imageCanvas" width="700" height="500">
+                    <canvas 
+                        id="imageCanvas" 
+                        width="700" 
+                        height="500"
+                        onmousedown="drawStart(event)" 
+                        onmouseup="drawEnd(event)" 
+                    >
                         Your browser does not support the canvas element.
                     </canvas>
-                    <canvas 
+                    <!--<canvas 
                         id="annotationCanvas" 
-                        onmousedown="drawStart(this, event)" 
-                        onmouseup="drawEnd(this, event)" 
+                        onmousedown="drawStart(event)" 
+                        onmouseup="drawEnd(event)" 
                         width="700" 
                         height="500" 
+                        onkeydown="write(event)"
                     >
-                    </canvas>
+                    </canvas>-->
                     <script src="htmlCanvas.js"></script>
                 </div>
             </div>
@@ -69,8 +77,8 @@
                 <hr />
                 <div>
                     Lower
-                    <div>tags</div>
-                    <div>delete tags</div>
+                    <div id="tags"></div>
+                    <div><button onclick="deleteAllTags()">Clear All Tags</button></div>
                     
                 </div>
             </div>
