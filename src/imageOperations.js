@@ -11,26 +11,30 @@ window.addEventListener('load', function() {
 });
 
 function changeImage(index) {
-    var img = document.querySelector('img');
-    img.onload = () => {
-        URL.revokeObjectURL(img.src); 
-    }
-
-    img.src = URL.createObjectURL(allImages[index]);
+    //var img = document.querySelector('img');
+    //img.onload = () => {
+    //    URL.revokeObjectURL(img.src); 
+    //}
+    //img.src = URL.createObjectURL(allImages[index]);
     currentSelectedImage = index;
     changeImageNumber();
+    loadImage(allImages[index])
 }
 
 function deleteImage() {
     allImages.splice(currentSelectedImage, 1);
-    var img = document.querySelector('img');
-    img.onload = () => {
-        URL.revokeObjectURL(img.src); 
-    }
+    // var img = document.querySelector('img');
+    // img.onload = () => {
+    //     URL.revokeObjectURL(img.src); 
+    // }
 
     if(allImages.length >0){
-        currentSelectedImage--;
-        img.src = URL.createObjectURL(allImages[currentSelectedImage]);
+        changeImage(--currentSelectedImage)
+        // currentSelectedImage--;
+        // drawImage(allImages[currentSelectedImage]);
+        // img.src = URL.createObjectURL(allImages[currentSelectedImage]);
+    }else{
+        clearImage();
     }
 }
 

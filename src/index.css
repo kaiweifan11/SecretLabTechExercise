@@ -72,3 +72,13 @@
     display: inline-block;
     text-align: right;
 }
+
+#imageCanvas {
+    border:1px solid #c3c3c3;
+}
+
+#annotationCanvas {
+    position: absolute;
+    top: 30px;
+    left: 417px;
+}
