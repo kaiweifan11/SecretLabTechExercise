@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="index.css">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Secret Lab Canvas Gallery</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="imageOperations.js"></script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="'root" class="root">
+        <div class="flex-container">
+            <div class="flex-items">
+                <div class="canvas">
+                    <img class="image" src="test.jpg" />
+                </div>
+            </div>
+            <div class="flex-items">
+                <div class="upper">
+                    <div class="upper-left">
+                        <span id="imageNumber"></span>
+                    </div>
+                    <div class="upper-right">
+                        <div class="back-next-buttons"> 
+                            <p onclick="prevImage()">Back</p>
+                        </div>
+                        <div class="image-breadcrumb">
+                            <span id="imageBreadcrumb"></span>
+                        </div>
+                        <div class="back-next-buttons">
+                            <p  onclick="nextImage()">Next</p>
+                        </div>
+                    </div>
+                    <div class="upload-operations">
+                        <button onclick="deleteImage()">Delete</button>
+                        <input type="file" />
+                    </div>
+                </div>
+                <hr />
+                <div>
+                    Lower
+                    <div>tags</div>
+                    <div>delete tags</div>
+                    
+                </div>
+            </div>
+         </div>
+
+
+    </div>
+    
+  </body>
+</html>
