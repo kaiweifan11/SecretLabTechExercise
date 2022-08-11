@@ -11,6 +11,9 @@ function loadImage(imageFile){
     
     img.src = URL.createObjectURL(imageFile);
     img.onload = function() {
+        if(this.width > 700 || this.height > 500){
+            alert('For optimal experience, please upload images width 700px x height 500px');
+        }
         clearImage();
         ctx.drawImage(img, 10, 10);
     }

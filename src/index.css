@@ -41,6 +41,7 @@
     align-self: auto;
     order: 0;
     text-align: center;
+    grid-column: 1 / 2;
 }
 
 .image {
@@ -49,6 +50,10 @@
 
 .upload-operations {
     text-align: right;
+}
+
+.upload-button {
+    width: 87px;
 }
 
 .back-next-buttons {
@@ -61,16 +66,30 @@
     display: inline-block;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 100px auto 100px;
+    justify-content: space-between;
+}
+
+.grid-item {
+    display: inline-block;
+    max-width: 200px;
+}
+
+.grid-item-center {
+    display: inline-block;
+    grid-column: 2 / 3;
+}
+
 .upper-left {
     display: inline-block;
-    width: 50%;
-    text-align: left;
+    float: left;
     font-weight: bold;
 }
 
 .upper-right {
-    display: inline-block;
-    text-align: right;
+    float: right;
 }
 
 #imageCanvas {
@@ -88,14 +107,40 @@
     color: #c3c3c3;
 }
 
+.annotation-display {
+    margin-bottom: 5px;
+}
+
 .delete-annotation {
     color: blue;
     cursor: pointer;
     margin-left: 10px;
 }
 
-/* #annotationCanvas {
-    position: absolute;
-    top: 30px;
-    left: 417px;
-} */
+.carousel-elem {
+    display: inline-block;
+}
+
+#carousel {
+    text-align: center;
+}
+
+.thumbnail-container {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.thumbnail {
+    width: 50px;
+    height: 50px;
+}
+
+.tag-container {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.tags {
+    margin-bottom: 10px;
+}

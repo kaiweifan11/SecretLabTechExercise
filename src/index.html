@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
@@ -23,66 +24,77 @@
     <script src="htmlCanvas.js"></script>
     <script src="annotations.js"></script>
     <script src="draggable.js"></script>
-    
-  </head>
-  <body>
+
+</head>
+
+<body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="'root" class="root">
         <div class="flex-container">
             <div class="flex-items">
-                <div class="canvas" id="canvas">
-                    <!--<img class="image" src="test.jpg" />-->
-                    <canvas 
-                        id="imageCanvas" 
-                        width="700" 
-                        height="500"
-                        onmousedown="drawStart(event)" 
-                        onmouseup="drawEnd(event)" 
-                    >
-                        Your browser does not support the canvas element.
-                    </canvas>
-                    <!--<canvas 
-                        id="annotationCanvas" 
-                        onmousedown="drawStart(event)" 
-                        onmouseup="drawEnd(event)" 
-                        width="700" 
-                        height="500" 
-                        onkeydown="write(event)"
-                    >
-                    </canvas>-->
-                    <script src="htmlCanvas.js"></script>
+                <div class="canvas grid-container" id="canvas">
+                    <div class="grid-item"></div>
+                    <div class="grid-item-center">
+                        <canvas id="imageCanvas" width="720" height="520" onmousedown="drawStart(event)"
+                            onmouseup="drawEnd(event)">
+                            Your browser does not support the canvas element.
+                        </canvas>
+                    </div>
+                    <div class="grid-item"></div>
+
+                    <div class="grid-item"></div>
+                    <div class="grid-item-center">
+                        <div class="carousel-elem" id="carousel-items"></div>
+                    </div>
+                    <div class="grid-item"></div>
+
+                    <div class="grid-item"></div>
+                    <div class="grid-item-center">
+                        <div class="upper-left">
+                            <div class="image-number">
+                                <span id="imageNumber"></span>
+                            </div>
+                        </div>
+                        <div class="upper-right">
+                            <div class="back-next-buttons">
+                                <span onclick="prevImage()">Back</p>
+                            </div>
+                            <div class="image-breadcrumb">
+                                <span id="imageBreadcrumb"></span>
+                            </div>
+                            <div class="back-next-buttons">
+                                <span onclick="nextImage()">Next</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item"></div>
+
+                    <div class="grid-item"></div>
+                    <div class="grid-item-center">
+                        <div class="upload-operations">
+                            <button onclick="deleteImage()">Delete</button>
+                            <input type="file" class='upload-button'/>
+                        </div>
+                    </div>
+                    <div class="grid-item"></div>
+
+                    <div class="grid-item"></div>
+                    <div class="grid-item-center">
+                        <hr />
+                    </div>
+                    <div class="grid-item"></div>
+
+                    <div class="grid-item"></div>
+                    <div class="grid-item-center tag-container">
+                        <div id="tags" class="tags"></div>
+                        <div><button onclick="deleteAllTags()">Clear All Tags</button></div>
+                    </div>
+                    <div class="grid-item"></div>
                 </div>
             </div>
-            <div class="flex-items">
-                <div class="upper">
-                    <div class="upper-left">
-                        <span id="imageNumber"></span>
-                    </div>
-                    <div class="upper-right">
-                        <div class="back-next-buttons"> 
-                            <p onclick="prevImage()">Back</p>
-                        </div>
-                        <div class="image-breadcrumb">
-                            <span id="imageBreadcrumb"></span>
-                        </div>
-                        <div class="back-next-buttons">
-                            <p  onclick="nextImage()">Next</p>
-                        </div>
-                    </div>
-                    <div class="upload-operations">
-                        <button onclick="deleteImage()">Delete</button>
-                        <input type="file" />
-                    </div>
-                </div>
-                <hr />
-                <div>
-                    Lower
-                    <div id="tags"></div>
-                    <div><button onclick="deleteAllTags()">Clear All Tags</button></div>
-                    
-                </div>
-            </div>
-         </div>
+        </div>
     </div>
-  </body>
+    <script src="htmlCanvas.js"></script>
+</body>
+
 </html>
